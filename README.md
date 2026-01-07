@@ -1,54 +1,54 @@
 # **Bank-Loan-Analysis-Power-BI-SQL**
 This project is a guided data analytics project completed as part of my learning journey in Power BI and SQL. The analysis focuses on the finance domain, specifically bank loan data, to understand loan application trends, customer risk profiles, and overall loan performance.
 
-# Table of Contents
+## Table of Contents
 
-Project Overview
+[Project Overview](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/edit/main/README.md#project-overview)
 
-Project Scope
+[Project Scope](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/edit/main/README.md#project-scope)
 
-Project Objectives
+[Project Objectives](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/edit/main/README.md#project-objectives)
 
-Expected Outcome
+[Expected Outcome](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/edit/main/README.md#expected-outcome)
 
-Document Purpose
+[Document Purpose](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/edit/main/README.md#document-purpose)
 
-Use Case
+[Use Case](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/edit/main/README.md#use-case)
 
-Data Source
+[Data Source](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/edit/main/README.md#data-source)
 
-Data Cleaning and Processing
+[Data Cleaning and Processing](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/edit/main/README.md#data-cleaning-and-processing)
 
-Data Analysis
+[Data Analysis](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/edit/main/README.md#data-analysis)
 
-Data Visualization
+[Data Visualization](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/edit/main/README.md#data-visualization)
 
-Recommendation
+[Recommendation](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/edit/main/README.md#recommendation)
 
-Conclusion
+[Conclusion](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/edit/main/README.md#conclusion)
 
 
-# Project Overview
+## Project Overview
 
-# Project Scope
+## Project Scope
 
-# Project Objectives
+## Project Objectives
 
-# Expected Outcome
+## Expected Outcome
 
-# Document Purpose
+## Document Purpose
 
-# Use Case
+## Use Case
 
-# Data Source
+## Data Source
 
-# Data Cleaning and Processing
+## Data Cleaning and Processing
 
-# Data Analysis
+## Data Analysis
 
-# Data Visualization
+## Data Visualization
 
-# Recommendation
+## Recommendation
 
-# Conclusion
+## Conclusion
 
