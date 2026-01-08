@@ -207,7 +207,9 @@ This section documents the SQL queries used in the analysis and the insights der
     - *Total Loan Applications*
   
    `SELECT COUNT(id) AS Total_Applications FROM financial_loan`
+   
 
+   ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20114536.png)
 
    - *Month to Date (MTD) Total Loan Applications*
   
