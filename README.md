@@ -17,11 +17,13 @@ This project is a guided data analytics project completed as part of my learning
 
 [Data Source](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/edit/main/README.md#data-source)
 
+[Data modelling](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/edit/main/README.md#data-modelling)
+
 [Data Cleaning and Processing](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/edit/main/README.md#data-cleaning-and-processing)
 
 [SQL Analysis & Results](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/edit/main/README.md#sql-analysis--results)
 
-[Power BI Analysis $ Results](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/edit/main/README.md#power-bi-analysis--results)
+[Power BI Analysis & Results](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/edit/main/README.md#power-bi-analysis--results)
 
 [Data Visualization](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/edit/main/README.md#data-visualization)
 
@@ -146,6 +148,23 @@ Data was supplied in a structured format and imported into a SQL Server database
 
 All data cleaning, transformation, querying, and visualization were independently performed as part of the project to ensure a full understanding of the analytical workflow.
 
+## Data modelling
+
+Data modeling was carried out in Power BI to ensure accurate analysis, efficient reporting, and proper time-based calculations. A star-schema–like structure was implemented to organize the data and support dashboard performance.
+
+**Data Model Structure**
+
+ *Fact Table:*
+  - The primary fact table contains bank loan transactional data, including loan amount, funded amount, payment details, interest rate, DTI, loan status, and issue date.
+
+ *Date Table:*
+  - A separate date table was created to enable time intelligence functions such as monthly trends, year-over-year comparisons, and filtering by time periods.
+
+ *Relationships*
+  - A one-to-many relationship was established between the Date Table and the Bank Loan Fact Table using the loan issue date.
+
+Proper relationship direction was maintained to ensure accurate aggregation and filtering across visuals.
+
 ## Data Cleaning and Processing
 
 The data analysis process involved a systematic approach using SQL and Power BI to transform raw bank loan data into meaningful insights.
@@ -182,7 +201,7 @@ Connected Power BI to the SQL database to build interactive dashboards featuring
 
 This section documents the SQL queries used in the analysis and the insights derived from each query. All queries were executed on the bank loan dataset to calculate key financial metrics and support dashboard development.
 
-## Power BI Analysis $ Results
+## Power BI Analysis & Results
 
 ## Data Visualization
 
@@ -210,14 +229,14 @@ Overall, this project improved my analytical thinking and helped me understand h
 
 During the course of this project, I encountered several challenges that contributed significantly to my learning and problem-solving skills:
 
-*Understanding Financial Metrics:*
+- *Understanding Financial Metrics:*
   - Interpreting finance-related KPIs such as interest rate, DTI, good vs bad loans, and repayment performance required additional research to fully understand their business
 implications.
 
 * Data Modeling in Power BI:*
   - Establishing proper relationships between tables and creating a functional date table for time-based analysis was challenging but essential for accurate reporting.
   
-*Custom Dashboard Branding (Logo Integration):*
+- *Custom Dashboard Branding (Logo Integration):*
   - Incorporating a custom bank logo into the Power BI dashboard while maintaining layout consistency and visual balance was a challenge, especially aligning it with the overall dashboard design.
 
 Overcoming these challenges improved my technical skills, attention to detail, and confidence in handling real-world data analytics projects.
