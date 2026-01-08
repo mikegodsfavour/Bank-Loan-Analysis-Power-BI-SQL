@@ -19,11 +19,15 @@ This project is a guided data analytics project completed as part of my learning
 
 [Data Cleaning and Processing](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/edit/main/README.md#data-cleaning-and-processing)
 
-[Data Analysis](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/edit/main/README.md#data-analysis)
+[SQL Analysis & Results](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/edit/main/README.md#sql-analysis--results)
+
+[Power BI Analysis $ Results](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/edit/main/README.md#power-bi-analysis--results)
 
 [Data Visualization](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/edit/main/README.md#data-visualization)
 
 [What I Learned](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/README.md#what-i-learned)
+
+[Challenges Faced](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/edit/main/README.md#challenges-faced)
 
 [Recommendation](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/edit/main/README.md#recommendation)
 
@@ -130,15 +134,15 @@ Although this project is conducted for learning and portfolio demonstration, it 
 
 ## Data Source
 
-The dataset used in this project was obtained from a guided tutorial by Swapnjeet (Data Tutorial by Swapnjeet) as part of a learning-based Power BI and SQL project.
+The dataset used in this project was obtained from a guided tutorial by Swapnjeet (Data Tutorial by Swapnjeet)(https://youtu.be/3I8wd1AShXs?si=TT6yynP0KdYvZs_l) as part of a learning-based Power BI and SQL project.
 
-The data represents bank loan records within the finance domain
+The data represents bank loan records within the finance domain.
 
-It includes information related to loan applications, customer profiles, loan status, interest rates, funded amounts, and repayment details
+It includes information related to loan applications, customer profiles, loan status, interest rates, funded amounts, and repayment details.
 
-The dataset was provided specifically for educational and portfolio development purposes
+The dataset was provided specifically for educational and portfolio development purposes.
 
-Data was supplied in a structured format and imported into a SQL Server database for analysis
+Data was supplied in a structured format and imported into a SQL Server database for analysis.
 
 All data cleaning, transformation, querying, and visualization were independently performed as part of the project to ensure a full understanding of the analytical workflow.
 
@@ -174,7 +178,11 @@ The data analysis process involved a systematic approach using SQL and Power BI 
 Visualization & Reporting:
 Connected Power BI to the SQL database to build interactive dashboards featuring KPIs, charts, slicers, and drill-through views for deeper analysis.
 
-## Data Analysis
+## SQL Analysis & Results
+
+This section documents the SQL queries used in the analysis and the insights derived from each query. All queries were executed on the bank loan dataset to calculate key financial metrics and support dashboard development.
+
+## Power BI Analysis $ Results
 
 ## Data Visualization
 
@@ -197,6 +205,22 @@ Through this guided Bank Loan Analysis project, I developed and strengthened ess
 - Developing the ability to translate raw financial data into actionable insights that support decision-making in the banking and finance domain
 
 Overall, this project improved my analytical thinking and helped me understand how data analytics is applied in real-world financial scenarios.
+
+## Challenges Faced
+
+During the course of this project, I encountered several challenges that contributed significantly to my learning and problem-solving skills:
+
+*Understanding Financial Metrics:*
+  - Interpreting finance-related KPIs such as interest rate, DTI, good vs bad loans, and repayment performance required additional research to fully understand their business
+implications.
+
+* Data Modeling in Power BI:*
+  - Establishing proper relationships between tables and creating a functional date table for time-based analysis was challenging but essential for accurate reporting.
+  
+*Custom Dashboard Branding (Logo Integration):*
+  - Incorporating a custom bank logo into the Power BI dashboard while maintaining layout consistency and visual balance was a challenge, especially aligning it with the overall dashboard design.
+
+Overcoming these challenges improved my technical skills, attention to detail, and confidence in handling real-world data analytics projects.
 
 ## Recommendation
 
