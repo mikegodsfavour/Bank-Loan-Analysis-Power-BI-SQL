@@ -23,7 +23,7 @@ This project is a guided data analytics project completed as part of my learning
 
 [Data Visualization](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/edit/main/README.md#data-visualization)
 
-What I Learned
+[What I Learned](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/README.md#what-i-learned)
 
 [Recommendation](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/edit/main/README.md#recommendation)
 
@@ -178,7 +178,7 @@ Connected Power BI to the SQL database to build interactive dashboards featuring
 
 ## Data Visualization
 
-## What I Learnrd
+## What I Learned
 
 Through this guided Bank Loan Analysis project, I developed and strengthened essential data analytics skills by working through a complete end-to-end finance use case using SQL and Power BI.
 
