@@ -201,69 +201,88 @@ Connected Power BI to the SQL database to build interactive dashboards featuring
 
 This section documents the SQL queries used in the analysis and the insights derived from each query. All queries were executed on the bank loan dataset to calculate key financial metrics and support dashboard development.
 
-- 1. What is the total number of loan applications received during a specified period. Additionally find the Month-to-Date (MTD) for the total Loan Applications
+-  What is the total number of loan applications received during a specified period. Additionally find the Month-to-Date (MTD) for the total Loan Applications
+     
 
-   ` - *Total Loan Applications*
-SELECT COUNT(id) AS Total_Applications FROM financial_loan
-
-
-  - *Month to Date (MTD) Total Loan Applications*
-SELECT COUNT(id) AS MTD_Total_Applications FROM financial_loan
-WHERE MONTH(issue_date) = 12 AND YEAR(issue_date) =2021
- 
--- Previous Month to Date (PMTD) Total Loan Applications
-SELECT COUNT(id) AS PMTD_Total_Applications FROM financial_loan
-WHERE MONTH(issue_date) = 11 AND YEAR(issue_date) =2021`
- 
-
---2. Understanding the total amount of funds disbursed as loans is crucial. What are the MTD Total Funded Amount, then analyse the Month-over-Month (MoM) changes in this metric
--- Total Funded Amount
-SELECT SUM(loan_amount) AS Total_Funded_Amount FROM financial_loan
-
--- Month to Date (MTD) of Total Funded Amount
-SELECT SUM(loan_amount) AS MTD_Total_Funded_Amount FROM financial_loan
-WHERE MONTH(issue_date) = 12 AND YEAR(issue_date) =2021
- 
--- Previous Month to Date (PMTD) of Total Funded Amount
-SELECT SUM(loan_amount) AS PMTD_Total_Funded_Amount FROM financial_loan
-WHERE MONTH(issue_date) = 11 AND YEAR(issue_date) =2021
+    - *Total Loan Applications*
+  
+   `SELECT COUNT(id) AS Total_Applications FROM financial_loan`
 
 
---3. Tracking the total amount received from borrowers is essential for assessing the bank's cash flow and loan repayment. Analyse the Month-to-Date (MTD) Total Amount Received and observe the Month-over-Month (MoM) changes.
---Total Amount Received
-SELECT SUM(total_payment) AS Total_Amount_Received FROM financial_loan
+   - *Month to Date (MTD) Total Loan Applications*
+  
+   `SELECT COUNT(id) AS MTD_Total_Applications FROM financial_loan
+    WHERE MONTH(issue_date) = 12 AND YEAR(issue_date) =2021`
  
--- Month to Date (MTD) of Total Amount Received
-SELECT SUM(total_payment) AS MTD_Total_Amount_Received FROM financial_loan
-WHERE MONTH(issue_date) = 12  AND YEAR(issue_date) =2021
- 
--- Previous Month to Date (PMTD) of Total Amount Received
-SELECT SUM(total_payment) AS PMTD_Total_Amount_Received FROM financial_loan
-WHERE MONTH(issue_date) = 11  AND YEAR(issue_date) =2021
+   - *Previous Month to Date (PMTD) Total Loan Applications*
 
---4.Calculate the average interest rate across all loans, MTD, and monitor the Month-over-Month (MoM) variations in interest rates.
--- Average Interest Rate
-SELECT AVG(int_rate)*100 AS Avg_Int_Rate FROM financial_loan
+   `SELECT COUNT(id) AS PMTD_Total_Applications FROM financial_loan
+    WHERE MONTH(issue_date) = 11 AND YEAR(issue_date) =2021`
  
--- Month to Date (MTD) of Average Interest
-SELECT AVG(int_rate)*100 AS MTD_Avg_Int_Rate FROM financial_loan
-WHERE MONTH(issue_date) = 12 AND YEAR(issue_date) =2021
- 
--- Previous Month to Date (PMTD) of Average Interest
-SELECT AVG(int_rate)*100 AS PMTD_Avg_Int_Rate FROM financial_loan
-WHERE MONTH(issue_date) = 11 AND YEAR(issue_date) =2021
+- Understanding the total amount of funds disbursed as loans is crucial. What are the MTD Total Funded Amount, then analyse the Month-over-Month (MoM) changes in this metric.
 
---5. Calculate the average DTI for our borrowers, MTD, and monitor the Month-Over-Month fluctuations 
--- Average Debt-to-Income Ratio (DTI)
-SELECT AVG(dti)*100 AS Avg_DTI FROM financial_loan
+   - *Total Funded Amount*
+
+   `SELECT SUM(loan_amount) AS Total_Funded_Amount FROM financial_loan`
+
+   - *Month to Date (MTD) of Total Funded Amount*
+    
+   `SELECT SUM(loan_amount) AS MTD_Total_Funded_Amount FROM financial_loan
+    WHERE MONTH(issue_date) = 12 AND YEAR(issue_date) =2021`
  
--- Month to Date (MTD) of Average Debt-to-Income Ratio (DTI)
-SELECT ROUND(AVG(dti),5)*100 AS MTD_Avg_DTI FROM financial_loan
-WHERE MONTH(issue_date) = 12 AND YEAR(issue_date) =2021
+   - *Previous Month to Date (PMTD) of Total Funded Amount*
+    
+   `SELECT SUM(loan_amount) AS PMTD_Total_Funded_Amount FROM financial_loan
+    WHERE MONTH(issue_date) = 11 AND YEAR(issue_date) =2021`
+
+
+- Tracking the total amount received from borrowers is essential for assessing the bank's cash flow and loan repayment. Analyse the Month-to-Date (MTD) Total Amount Received and observe the Month-over-Month (MoM) changes.
+
+   - *Total Amount Received*
+   
+   `SELECT SUM(total_payment) AS Total_Amount_Received FROM financial_loan`
  
--- Previous Month to Date (PMTD) of Average Debt-to-Income Ratio (DTI)
-SELECT AVG(dti)*100 AS PMTD_Avg_DTI FROM financial_loan
-WHERE MONTH(issue_date) = 11 AND YEAR(issue_date) =2021
+   - *Month to Date (MTD) of Total Amount Received*
+   
+   `SELECT SUM(total_payment) AS MTD_Total_Amount_Received FROM financial_loan
+    WHERE MONTH(issue_date) = 12  AND YEAR(issue_date) =2021`
+ 
+   - *Previous Month to Date (PMTD) of Total Amount Received*
+    
+   `SELECT SUM(total_payment) AS PMTD_Total_Amount_Received FROM financial_loan
+    WHERE MONTH(issue_date) = 11  AND YEAR(issue_date) =2021`
+
+- Calculate the average interest rate across all loans, MTD, and monitor the Month-over-Month (MoM) variations in interest rates.
+
+   - *Average Interest Rate*
+    
+   `SELECT AVG(int_rate)*100 AS Avg_Int_Rate FROM financial_loan`
+ 
+   - *Month to Date (MTD) of Average Interest*
+    
+   `SELECT AVG(int_rate)*100 AS MTD_Avg_Int_Rate FROM financial_loan
+    WHERE MONTH(issue_date) = 12 AND YEAR(issue_date) =2021`
+ 
+   - *Previous Month to Date (PMTD) of Average Interest*
+    
+    `SELECT AVG(int_rate)*100 AS PMTD_Avg_Int_Rate FROM financial_loan
+     WHERE MONTH(issue_date) = 11 AND YEAR(issue_date) =2021`
+
+- Calculate the average DTI for our borrowers, MTD, and monitor the Month-Over-Month fluctuations
+
+    - *Average Debt-to-Income Ratio (DTI)*
+    
+    `SELECT AVG(dti)*100 AS Avg_DTI FROM financial_loan`
+ 
+    - *Month to Date (MTD) of Average Debt-to-Income Ratio (DTI)*
+    
+    `SELECT ROUND(AVG(dti),5)*100 AS MTD_Avg_DTI FROM financial_loan
+     WHERE MONTH(issue_date) = 12 AND YEAR(issue_date) =2021`
+ 
+    - *Previous Month to Date (PMTD) of Average Debt-to-Income Ratio (DTI)*
+    
+    `SELECT AVG(dti)*100 AS PMTD_Avg_DTI FROM financial_loan
+     WHERE MONTH(issue_date) = 11 AND YEAR(issue_date) =2021`
 
 
 -- GOOD LOAN ISSUED
