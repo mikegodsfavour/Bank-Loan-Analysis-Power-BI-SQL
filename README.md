@@ -163,6 +163,8 @@ Data modeling was carried out in Power BI to ensure accurate analysis, efficient
  *Relationships*
   - A one-to-many relationship was established between the Date Table and the Bank Loan Fact Table using the loan issue date.
 
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-09%20143702.png)
+
 Proper relationship direction was maintained to ensure accurate aggregation and filtering across visuals.
 
 ## Data Cleaning and Processing
@@ -343,135 +345,215 @@ WHERE loan_status = 'Fully Paid' OR loan_status = 'Current'`
      `SELECT SUM(total_payment) AS Good_Loan_amount_received FROM financial_loan
       WHERE loan_status = 'Fully Paid' OR loan_status = 'Current'`
 
- ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20115644.png)
+ ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20115644.png)	
+ 
+ - BAD LOAN ISSUED
+   
+   - *Bad Loan Percentage*
+     
+   `SELECT
+        (COUNT(CASE WHEN loan_status = 'Charged Off' THEN id END) * 100.0) / 
+	    COUNT(id) AS Bad_Loan_Percentage
+   FROM financial_loan`
+
+ ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20120002.png)
+ 
+- *Bad Loan Applications*
+  
+  `SELECT COUNT(id) AS Bad_Loan_Applications FROM financial_loan
+   WHERE loan_status = 'Charged Off'`
+
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20120037.png)  
+
+- *Bad Loan Funded Amount*
     
--- BAD LOAN ISSUED
--- Bad Loan Percentage
-SELECT
-    (COUNT(CASE WHEN loan_status = 'Charged Off' THEN id END) * 100.0) / 
-	COUNT(id) AS Bad_Loan_Percentage
-FROM financial_loan
- 
--- Bad Loan Applications
-SELECT COUNT(id) AS Bad_Loan_Applications FROM financial_loan
-WHERE loan_status = 'Charged Off'
- 
--- Bad Loan Funded Amount
-SELECT SUM(loan_amount) AS Bad_Loan_Funded_amount FROM financial_loan  
-WHERE loan_status = 'Charged Off'
- 
--- Bad Loan Amount Received
-SELECT SUM(total_payment) AS Bad_Loan_amount_received FROM financial_loan
-WHERE loan_status = 'Charged Off'
+     `SELECT SUM(loan_amount) AS Bad_Loan_Funded_amount FROM financial_loan  
+     WHERE loan_status = 'Charged Off'`
 
--- Total Loan Status
--- LOAN STATUS
-	SELECT
-        loan_status,
-        COUNT(id) AS Total_Loan_Applications,
-        SUM(total_payment) AS Total_Amount_Received,
-        SUM(loan_amount) AS Total_Funded_Amount,
-        AVG(int_rate * 100) AS Interest_Rate,
-        AVG(dti * 100) AS DTI
+ ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20120055.png) 
+ 
+- *Bad Loan Amount Received*
+    
+     `SELECT SUM(total_payment) AS Bad_Loan_amount_received FROM financial_loan
+     WHERE loan_status = 'Charged Off'`
+
+  ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20120120.png)
+
+- Total Loan Status
+  
+   - *LOAN STATUS*
+     
+	  `SELECT
+           loan_status,
+           COUNT(id) AS Total_Loan_Applications,
+           SUM(total_payment) AS Total_Amount_Received,
+           SUM(loan_amount) AS Total_Funded_Amount,
+           AVG(int_rate * 100) AS Interest_Rate,
+           AVG(dti * 100) AS DTI
+     FROM financial_loan
+     GROUP BY
+         loan_status`
+
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20120212.png)	 
+ 
+- *Month to Date (MTD) of Total Amount Received for Loan Status*
+  
+     `SELECT 
+	      loan_status, 
+	      SUM(total_payment) AS MTD_Total_Amount_Received, 
+	      SUM(loan_amount) AS MTD_Total_Funded_Amount, 
+     FROM financial_loan
+     WHERE MONTH(issue_date) = 12 
+     GROUP BY loan_status`
+
+  ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20120251.png)
+ 
+- BANK LOAN REPORT | OVERVIEW
+   
+  - *Monthly Trends by Issue Date: To identify seasonality and long-term trends in lending activities*
+
+    `SELECT 
+	    MONTH(issue_date) AS Month_Munber, 
+	    DATENAME(MONTH, issue_date) AS Month_name, 
+	    COUNT(id) AS Total_Loan_Applications,
+	    SUM(loan_amount) AS Total_Funded_Amount,
+	    SUM(total_payment) AS Total_Amount_Received
+   FROM financial_loan
+   GROUP BY MONTH(issue_date), DATENAME(MONTH, issue_date)
+   ORDER BY MONTH(issue_date)`
+
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20120354.png)
+ 
+- *Regional Analysis by State:To identify regions with significant lending activity and assess regional disparities*
+
+   `SELECT 
+	   address_state AS State, 
+	   COUNT(id) AS Total_Loan_Applications,
+	   SUM(loan_amount) AS Total_Funded_Amount,
+	   SUM(total_payment) AS Total_Amount_Received
+   FROM financial_loan
+   GROUP BY address_state
+   ORDER BY address_state`
+
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-09%20141519.png)
+ 
+- *Loan Term Analysis: To allow the client to understand the distribution of loans across various term lengths.*
+  
+    `SELECT 
+	    term AS Term, 
+	    COUNT(id) AS Total_Loan_Applications,
+	    SUM(loan_amount) AS Total_Funded_Amount,
+	    SUM(total_payment) AS Total_Amount_Received
     FROM financial_loan
-    GROUP BY
-        loan_status
+    GROUP BY term
+    ORDER BY term`
+
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-09%20141717.png)  
+
+- *Employee Length: How lending metrics are distributed among borrowers with different employment lengths, helping us assess the impact of employment history on loan applications*
+    
+    `SELECT
+	    emp_length AS Employee_Length, 
+	    COUNT(id) AS Total_Loan_Applications,
+	    SUM(loan_amount) AS Total_Funded_Amount,
+	    SUM(total_payment) AS Total_Amount_Received
+   FROM financial_loan
+   GROUP BY emp_length
+   ORDER BY emp_length`
+
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-09%20141753.png)
  
--- Month to Date (MTD) of Total Amount Received for Loan Status
-SELECT 
-	loan_status, 
-	SUM(total_payment) AS MTD_Total_Amount_Received, 
-	SUM(loan_amount) AS MTD_Total_Funded_Amount 
-FROM financial_loan
-WHERE MONTH(issue_date) = 12 
-GROUP BY loan_status
+- *Loan Purpose Breakdown: Will provide a visual breakdown of loan metrics based on the stated purposes of loans, aiding in the understanding of the primary reasons borrowers seek financing.*
+   
+   `SELECT 
+	   purpose AS PURPOSE, 
+	   COUNT(id) AS Total_Loan_Applications,
+	   SUM(loan_amount) AS Total_Funded_Amount,
+	   SUM(total_payment) AS Total_Amount_Received
+  FROM financial_loan
+  GROUP BY purpose
+  ORDER BY purpose`
+
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-09%20141837.png)  
  
+- *Home Ownership Analysis: For a hierarchical view of how home ownership impacts loan applications and disbursements.*
 
--- B.	BANK LOAN REPORT | OVERVIEW
--- Monthly Trends by Issue Date: To identify seasonality and long-term trends in lending activities
+   `SELECT 
+	   home_ownership AS Home_Ownership, 
+	   COUNT(id) AS Total_Loan_Applications,
+	   SUM(loan_amount) AS Total_Funded_Amount,
+	   SUM(total_payment) AS Total_Amount_Received
+   FROM financial_loan
+   GROUP BY home_ownership
+   ORDER BY home_ownership`
 
-SELECT 
-	MONTH(issue_date) AS Month_Munber, 
-	DATENAME(MONTH, issue_date) AS Month_name, 
-	COUNT(id) AS Total_Loan_Applications,
-	SUM(loan_amount) AS Total_Funded_Amount,
-	SUM(total_payment) AS Total_Amount_Received
-FROM financial_loan
-GROUP BY MONTH(issue_date), DATENAME(MONTH, issue_date)
-ORDER BY MONTH(issue_date)
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-09%20141914.png)  
  
-
--- Regional Analysis by State:To identify regions with significant lending activity and assess regional disparities
-SELECT 
-	address_state AS State, 
-	COUNT(id) AS Total_Loan_Applications,
-	SUM(loan_amount) AS Total_Funded_Amount,
-	SUM(total_payment) AS Total_Amount_Received
-FROM financial_loan
-GROUP BY address_state
-ORDER BY address_state
- 
-
--- Loan Term Analysis: To allow the client to understand the distribution of loans across various term lengths.
-SELECT 
-	term AS Term, 
-	COUNT(id) AS Total_Loan_Applications,
-	SUM(loan_amount) AS Total_Funded_Amount,
-	SUM(total_payment) AS Total_Amount_Received
-FROM financial_loan
-GROUP BY term
-ORDER BY term
- 
--- Employee Length Analysis: How lending metrics are distributed among borrowers with differen
-SELECT 
-	emp_length AS Employee_Length, 
-	COUNT(id) AS Total_Loan_Applications,
-	SUM(loan_amount) AS Total_Funded_Amount,
-	SUM(total_payment) AS Total_Amount_Received
-FROM financial_loan
-GROUP BY emp_length
-ORDER BY emp_length
- 
--- Loan Purpose Breakdown: Will provide a visual breakdown of loan metrics based on the stated purposes of loans, aiding in the understanding of the primary reasons borrowers seek financing.
-
-SELECT 
-	purpose AS PURPOSE, 
-	COUNT(id) AS Total_Loan_Applications,
-	SUM(loan_amount) AS Total_Funded_Amount,
-	SUM(total_payment) AS Total_Amount_Received
-FROM financial_loan
-GROUP BY purpose
-ORDER BY purpose
- 
-
--- Home Ownership Analysis: For a hierarchical view of how home ownership impacts loan applications and disbursements.
-
-SELECT 
-	home_ownership AS Home_Ownership, 
-	COUNT(id) AS Total_Loan_Applications,
-	SUM(loan_amount) AS Total_Funded_Amount,
-	SUM(total_payment) AS Total_Amount_Received
-FROM financial_loan
-GROUP BY home_ownership
-ORDER BY home_ownership
- 
-
--- Note: We have applied multiple Filters on all the dashboards. You can check the results for the filters as well by modifying the query and comparing the results.
--- For e.g
--- See the results when we hit the Grade A in the filters for dashboards.
-SELECT 
-	purpose AS PURPOSE, 
-	COUNT(id) AS Total_Loan_Applications,
-	SUM(loan_amount) AS Total_Funded_Amount,
-	SUM(total_payment) AS Total_Amount_Received
-FROM financial_loan
-WHERE grade = 'A'
-GROUP BY purpose
-ORDER BY purpose
-
 ## Power BI Analysis & Results
 
 ## Data Visualization
+
+The Power BI dashboard is designed to provide a comprehensive view of bank loan performance through three main sections: Summary, Overview, and Details. Each section serves a specific analytical purpose and allows users to explore the data at different levels of granularity.
+
+The dashboard is interactive and user-friendly, enabling users to filter data using slicers and drill down into specific loan attributes. This structure supports both high-level decision-making and detailed performance analysis.
+
+- **Summary Dashboad**
+    
+The Summary Dashboard provides a high-level overview of the bank loan portfolio and serves as the starting point for analysis. It presents key financial and risk-related metrics that help users quickly understand overall loan performance.
+
+*This dashboard includes the following KPIs:*
+
+ - Total Loan Applications
+
+ - Total Funded Amount
+
+ - Total Amount Received
+
+ - Average Interest Rate
+
+ - Average Debt-to-Income (DTI) Ratio
+
+ - Good Loan vs Bad Loan Distribution
+
+These indicators offer a concise snapshot of loan volume, funding exposure, repayment behavior, and credit risk.
+
+Interactive slicers allow users to filter the data by time period and other relevant dimensions, ensuring that all metrics update dynamically. The Summary Dashboard enables quick performance assessment and helps identify areas that require further investigation in the Overview and Details dashboards.
+
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-09%20144225.png)
+
+- **Overview Dashboard**
+
+The Overview Dashboard provides a deeper analytical view of the bank loan data by breaking down loan performance across multiple dimensions. While the Summary Dashboard focuses on high-level KPIs, the Overview Dashboard helps users understand trends, patterns, and distributions within the loan portfolio.
+
+*This dashboard typically includes:*
+
+ - Monthly trends of loan applications and funded amounts
+
+ - Regional analysis by state
+
+ - Loan distribution by term length
+
+ - Loan purpose breakdown
+
+ - Home ownership analysis
+
+ - Employee length analysis
+
+By visualizing these dimensions, the dashboard allows users to identify growth patterns, regional concentration of loans, borrower characteristics, and common loan purposes. Interactive visuals and slicers enable users to explore the data dynamically and compare performance across different segments.
+
+The Overview Dashboard supports exploratory analysis and helps stakeholders uncover insights that explain why certain trends appear in the Summary Dashboard, making it a key tool for informed decision-making.
+
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-09%20144420.png)
+
+- **Details Dashboard**
+
+The Details Dashboard is designed to provide a granular, record-level view of the bank loan data. Unlike the Summary and Overview dashboards, which focus on aggregated insights and trends, this dashboard allows users to examine individual loan records and detailed attributes.
+
+This dashboard typically presents a tabular or grid view containing key loan information such as loan status, funded amount, amount received, interest rate, debt-to-income ratio (DTI), issue date, loan purpose, and borrower characteristics. Interactive filters and slicers enable users to drill down into specific time periods, regions, loan statuses, or customer segments.
+
+The Details Dashboard supports data validation, in-depth investigation, and ad-hoc analysis by allowing users to trace high-level trends back to the underlying data. It is especially useful for auditors, analysts, and business users who require transparency and detailed visibility into individual loan performance.
+
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-09%20144452.png)
 
 ## What I Learned
 
@@ -511,5 +593,17 @@ Overcoming these challenges improved my technical skills, attention to detail, a
 
 ## Recommendation
 
+Based on the analysis of the bank loan dataset, the following recommendations are suggested to support improved decision-making within the finance domain:
+
+- Monitor borrower segments with higher DTI ratios and unfavorable loan statuses to reduce credit risk.
+
+- Review loan approval criteria based on historical performance trends across loan purpose, term length, and home ownership.
+
+- Track regional loan performance regularly to identify areas with higher default risk.
+
+These recommendations are derived from historical data patterns and are intended for analytical and educational purposes.
+
 ## Conclusion
+
+This project demonstrates my ability to perform end-to-end data analysis in the finance domain using SQL and Power BI. Through this analysis, I developed practical skills in data cleaning, financial KPI calculation, data modeling, and dashboard design. The project reflects my growing confidence in applying data analytics techniques to real-world business scenarios.
 
