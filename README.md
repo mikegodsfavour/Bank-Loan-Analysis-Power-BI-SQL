@@ -921,3 +921,11 @@ These recommendations are derived from historical data patterns and are intended
 
 This project demonstrates my ability to perform end-to-end data analysis in the finance domain using SQL and Power BI. Through this analysis, I developed practical skills in data cleaning, financial KPI calculation, data modeling, and dashboard design. The project reflects my growing confidence in applying data analytics techniques to real-world business scenarios.
 
+Thank You For Reading
+
+I’m interested in a Data Analyst role in an organization where I can showcase my skills, take more responsibilities, continue to learn, an organization that I can grow with, where my work will be highly beneficial to the organization.
+
+You can reach me on mikefavour99@gmail.com
+
+THANK YOU
+
