@@ -502,14 +502,13 @@ Total Loan Applications represents the cumulative number of loan requests submit
  `Total Loan Application = COUNT(financial_loan[id])`
 
   - Month-to-Date (MTD): 4.3K
-
-`Total Loan Application = COUNT(financial_loan[id])`
+    
+`MTD Loan Application = CALCULATE(TOTALMTD([Total Loan Application],'Date Table'[Date]))`
 
   - Month-over-Month (MoM) Increase: 6.9K
 
 `MOM Loan Application = ([MTD Loan Application] - [PMTD Loan Applications])/[PMTD Loan Applications]`
 
- 
 ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-13%20153034.png)
 
 **Insights**
