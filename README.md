@@ -491,7 +491,332 @@ WHERE loan_status = 'Fully Paid' OR loan_status = 'Current'`
  
 ## Power BI Analysis & Results 
 
+ **Total Loan Applications**
 
+Total Loan Applications represents the cumulative number of loan requests submitted by customers within the selected analysis period. In this project, the total number of loan applications recorded is 38.6K, reflecting overall customer demand across the loan portfolio.
+
+- *Key Metrics are:*
+
+  - Total Loan Applications: 38.6K
+
+ `Total Loan Application = COUNT(financial_loan[id])`
+
+  - Month-to-Date (MTD): 4.3K
+
+`Total Loan Application = COUNT(financial_loan[id])`
+
+  - Month-over-Month (MoM) Increase: 6.9K
+
+`MOM Loan Application = ([MTD Loan Application] - [PMTD Loan Applications])/[PMTD Loan Applications]`
+
+ 
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-13%20153034.png)
+
+**Insights**
+
+- The total of 38.6K applications indicates strong engagement and demand for loan products.
+
+- The MTD value of 4.3K shows steady application activity within the current month, allowing real-time monitoring of performance.
+
+- A MoM increase of 6.9K highlights significant growth compared to the previous month, suggesting improved customer interest and possibly effective business or marketing strategies.
+
+The positive MoM trend reflects an upward movement in loan demand and overall portfolio activity.
+
+**Business Relevance**
+
+*This metric helps stakeholders:*
+
+- Monitor overall loan demand and growth trends.
+
+- Evaluate short-term performance using MTD and MoM indicators.
+
+- Identify periods of increased or declining customer activity.
+
+- Support informed decision-making in loan portfolio management.
+
+**Total Funded Amount**
+
+Total Funded Amount represents the total monetary value of loans that have been successfully approved and disbursed to customers within the selected period. In this analysis, the total funded amount stands at $435.8M, reflecting the overall scale of capital deployed by the institution.
+
+- *Key Metrics*
+
+  - Total Funded Amount: $435.8M
+
+  - Month-to-Date (MTD): $54.0M
+
+  - Month-over-Month (MoM) Growth: 13.0%
+
+**Insights**
+
+- The total funded amount of $435.8M indicates a strong lending capacity and consistent loan disbursement activity.
+
+- The MTD funded amount of $54.0M shows healthy ongoing loan approvals and disbursements within the current month.
+
+- A 13.0% MoM growth reflects a notable increase in funding compared to the previous month, signaling improved operational efficiency and higher loan approval volumes.
+
+- The upward MoM trend suggests growing borrower confidence and effective loan processing strategies.
+
+**Business Relevance**
+
+*This metric enables stakeholders to:*
+
+  - Track the volume of capital deployed over time.
+
+  - Monitor short-term performance using MTD and MoM indicators.
+
+  - Assess lending growth and operational effectiveness.
+
+  - Support strategic planning and resource allocation decisions.
+
+**Total Amount Received**
+
+Total Amount Received represents the total repayments collected from borrowers, including principal and interest, over the selected period. In this analysis, the total amount received is $473.1M, indicating strong repayment performance across the loan portfolio.
+
+- *Key Metrics*
+
+  - Total Amount Received: $473.1M
+
+  - Month-to-Date (MTD): $58.1M
+
+  - Month-over-Month (MoM) Growth: 15.8%
+
+**Insights**
+
+- The total amount received of $473.1M demonstrates effective loan recovery and consistent borrower repayment behavior.
+
+- The MTD value of $58.1M highlights steady inflow of repayments within the current month.
+
+- A 15.8% MoM growth indicates a significant increase in repayment collections compared to the previous month, suggesting improved loan performance and reduced default risk.
+
+- The higher MoM growth in amount received compared to funded amount reflects strong cash flow management and healthy loan quality.
+
+**Business Relevance**
+
+- *This metric helps decision-makers to:*
+
+ - Monitor repayment efficiency and cash inflows.
+
+ - Evaluate overall loan portfolio health.
+
+ - Identify trends in borrower repayment behavior.
+
+ - Support financial forecasting and liquidity planning.
+
+**Average Interest Rate**
+
+Average Interest Rate represents the mean interest rate applied across all loan applications in the portfolio. It is a key indicator of pricing strategy, borrower risk assessment, and overall revenue potential.
+
+*Key Metrics*
+
+- Average Interest Rate: 12.0%
+
+- Month-to-Date (MTD): 12.4%
+
+- Month-over-Month (MoM) Change: +3.5%
+
+**Insights**
+
+- The overall average interest rate of 12.0% indicates a balanced pricing approach across the loan portfolio.
+
+- The MTD increase to 12.4% suggests that newer loans issued during the current month are priced at slightly higher interest rates.
+
+- A 3.5% MoM increase may reflect:
+
+  - Increased lending to higher-risk borrower segments
+
+  - Adjustments in pricing strategy to manage credit risk
+
+  - Market-driven interest rate changes
+
+**Business Relevance**
+
+*This metric enables stakeholders to:*
+
+- Assess the effectiveness of loan pricing strategies.
+
+- Understand changes in borrower risk profiles.
+
+- Evaluate revenue potential from interest income.
+
+- Support strategic decisions on interest rate adjustments.
+
+**Average Debt-to-Income (DTI)**
+
+Average Debt-to-Income (DTI) measures the average proportion of a borrower’s monthly debt obligations relative to their income. It is a critical risk indicator used to assess borrowers’ ability to repay loans.
+
+*Key Metrics*
+
+- Average DTI: 13.3%
+
+- Month-to-Date (MTD): 13.7%
+
+- Month-over-Month (MoM) Change: +2.7%
+
+**Insights**
+
+- An overall average DTI of 13.3% suggests that most borrowers maintain a manageable level of debt relative to their income.
+
+- The MTD increase to 13.7% indicates that recent loan applicants are carrying slightly higher debt burdens.
+
+- A 2.7% MoM increase may point to:
+
+  - Rising borrowing levels among applicants
+
+  - Increased exposure to moderate-risk customers
+
+  - Economic factors influencing household debt levels
+
+**Business Relevance**
+
+*This metric helps stakeholders to:*
+
+- Evaluate borrower creditworthiness.
+
+- Monitor changes in portfolio risk.
+
+- Adjust lending policies and approval thresholds.
+
+- Strengthen risk management and underwriting decisions.
+
+**Good Loans Analysis**
+
+The Good Loans section highlights loans that are performing well based on repayment behavior and loan status. These loans represent low-risk customers and contribute positively to the overall loan performance.
+
+*Key Metrics*
+
+- Good Loan Percentage: 86.2%
+
+- Good Loan Applications: 33.2K
+
+- Good Loan Funded Amount: $370.2M
+
+- Good Loan Amount Received: $435.8M
+
+**Insights**
+
+- With 86.2% of total loans classified as good, the analysis shows strong overall loan quality and effective credit risk management.
+
+- A high volume of 33.2K good loan applications indicates consistent demand from creditworthy customers.
+
+- The funded amount of $370.2M reflects significant capital deployment toward low-risk borrowers.
+
+- The amount received ($435.8M) exceeding the funded amount suggests:
+
+  - Strong repayment performance
+
+  - Interest income generation
+
+  - Healthy cash inflows for the institution
+
+**Business Relevance**
+
+*This analysis helps stakeholders to:*
+
+- Measure loan health and loan performance.
+
+- Identify strengths in credit approval processes.
+
+- Optimize lending strategies toward low-risk borrowers.
+
+- Support sustainable revenue growth through high-quality loans.
+
+**Loan Issues – Bad Loans Analysis**
+
+The Bad Loans section focuses on loans that are underperforming or classified as high risk. These loans typically include defaults, late repayments, or loans with poor repayment behavior, which can negatively impact the financial health of the institution.
+
+*Key Metrics*
+
+- Bad Loan Percentage: 13.82%
+
+- Bad Loan Applications: 5.3K
+
+- Bad Loan Funded Amount: $65.5M
+
+- Bad Loan Amount Received: $37.3M
+
+**Insights**
+
+- 13.82% of total loans fall into the bad loan category, indicating a measurable level of credit risk within the loan performance.
+  
+- The 5.3K bad loan applications represent a smaller portion of total applications compared to good loans, but still require close monitoring.
+
+- A funded amount of $65.5M shows significant exposure to higher-risk borrowers.
+
+- The amount received ($37.3M) is substantially lower than the funded amount, highlighting:
+
+  - Repayment challenges
+
+  - Potential loan defaults
+
+  - Reduced cash inflows and revenue loss
+
+**Business Impact**
+
+*Bad loans can:*
+
+- Reduce profitability due to unpaid principal and interest
+- 
+- Increase operational costs related to collections and recovery
+
+- Signal the need for improved credit screening and risk assessment policies
+
+Monitoring bad loan trends is critical for minimizing financial losses and strengthening overall loan performance.
+
+**Loan Status Grid Explanation**
+
+The Loan Status Grid provides a detailed breakdown of loan performance based on their current status. It offers a tabular view that helps stakeholders quickly assess the health of the loan portfolio and understand how different loan categories contribute to overall performance.
+
+**Purpose of the Loan Status Grid**
+
+*The grid is designed to:*
+
+- Summarize loan performance across different loan statuses
+
+- Compare funded amounts against amounts received
+
+- Identify high-risk and underperforming loans
+
+- Support data-driven credit and risk management decisions
+
+**Key Information Displayed**
+
+*The Loan Status Grid typically includes:*
+
+- Loan Status (e.g., Fully Paid, Current, Charged Off)
+
+- Total Loan Applications
+
+- Total Funded Amount
+
+- Total Amount Received
+
+- Average Interest Rate
+
+- Average Debt-to-Income (DTI)
+
+**Insights Derived**
+
+- Fully Paid and Current loans generally show higher repayment amounts relative to funded values, indicating healthy loan performance.
+
+- Charged-off loans highlight financial risk, as the amount received is significantly lower than the amount funded.
+
+- Comparing interest rates and DTI across loan statuses helps identify patterns associated with loan default or strong repayment behavior.
+
+- The grid allows quick identification of which loan categories contribute most to revenue and which require closer monitoring.
+
+**Business Value**
+
+*The Loan Status Grid enables:*
+
+- Improved monitoring of loan perfprmance quality
+
+- Early detection of repayment risks
+
+- Better credit policy evaluation
+
+- Transparent reporting for management and stakeholders
+
+This grid serves as a core analytical component that bridges high-level KPIs and detailed loan performance insights within the dashboard.
 
 ## Data Visualization
 
