@@ -217,7 +217,7 @@ This section documents the SQL queries used in the analysis and the insights der
    `SELECT COUNT(id) AS MTD_Total_Applications FROM financial_loan
     WHERE MONTH(issue_date) = 12 AND YEAR(issue_date) =2021`
 	
-![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/commit/b942de6f1df6b399a74739afd04990ccecf61356)
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/MTD%20Total%20A.png)
  
    - *Previous Month to Date (PMTD) Total Loan Applications*
 
@@ -232,14 +232,14 @@ This section documents the SQL queries used in the analysis and the insights der
 
    `SELECT SUM(loan_amount) AS Total_Funded_Amount FROM financial_loan`
 
- ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/commit/4a07f58c3376f0b54093745080d871fc9f51be22)
+ ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20114936.png)
 
    - *Month to Date (MTD) of Total Funded Amount*
     
    `SELECT SUM(loan_amount) AS MTD_Total_Funded_Amount FROM financial_loan
     WHERE MONTH(issue_date) = 12 AND YEAR(issue_date) =2021`
 
- ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/commit/8d52cd57f0ae458f8fe44677a9759ca3def81800)
+ ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20114956.png)
  
    - *Previous Month to Date (PMTD) of Total Funded Amount*
     
@@ -489,7 +489,9 @@ WHERE loan_status = 'Fully Paid' OR loan_status = 'Current'`
 
 ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-09%20141914.png)  
  
-## Power BI Analysis & Results
+## Power BI Analysis & Results 
+
+
 
 ## Data Visualization
 
@@ -499,25 +501,13 @@ The dashboard is interactive and user-friendly, enabling users to filter data us
 
 - **Summary Dashboad**
     
-The Summary Dashboard provides a high-level overview of the bank loan portfolio and serves as the starting point for analysis. It presents key financial and risk-related metrics that help users quickly understand overall loan performance.
+The Summary Dashboard provides a high-level snapshot of overall bank loan performance and key financial indicators. It is designed to give stakeholders a quick and clear understanding of how the loan portfolio is performing at a glance.
 
-*This dashboard includes the following KPIs:*
+This dashboard highlights core KPIs, including Total Loan Applications, Total Funded Amount, Total Amount Received, Average Interest Rate, and Average Debt-to-Income (DTI). Alongside these overall metrics, Month-to-Date (MTD) values are displayed to track current-month performance and compare it with cumulative totals.
 
- - Total Loan Applications
+The inclusion of MTD metrics allows users to monitor recent loan activity, identify short-term trends, and assess whether current performance aligns with historical patterns. This is particularly useful for tracking growth, repayment behavior, and loan quality within the ongoing month.
 
- - Total Funded Amount
-
- - Total Amount Received
-
- - Average Interest Rate
-
- - Average Debt-to-Income (DTI) Ratio
-
- - Good Loan vs Bad Loan Distribution
-
-These indicators offer a concise snapshot of loan volume, funding exposure, repayment behavior, and credit risk.
-
-Interactive slicers allow users to filter the data by time period and other relevant dimensions, ensuring that all metrics update dynamically. The Summary Dashboard enables quick performance assessment and helps identify areas that require further investigation in the Overview and Details dashboards.
+The Summary Dashboard also presents a Good Loan vs Bad Loan comparison, offering insight into loan quality and risk exposure. Interactive slicers enable users to filter the data by time period, loan status, or other dimensions, making the dashboard flexible for quick executive-level analysis and decision-making.
 
 ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-09%20144225.png)
 
