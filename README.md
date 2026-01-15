@@ -552,7 +552,7 @@ Total Funded Amount represents the total monetary value of loans that have been 
 `MOM Funded Amount = ([MTD Total Funded Amount] - [PMTD Total Funded Amount])/[PMTD Total Funded Amount]`
 
  
-![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-13%20153135.png)
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-13%20152957.png)
 
 **Insights**
 
@@ -594,6 +594,8 @@ Total Amount Received represents the total repayments collected from borrowers, 
 
 `MOM Total Amount Received = ([MTD Total Amount Received] - [PMTD Total Amount Received])/[PMTD Total Amount Received]`
 
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-13%20153135.png)
+
 **Insights**
 
 - The total amount received of $473.1M demonstrates effective loan recovery and consistent borrower repayment behavior.
@@ -633,6 +635,8 @@ Average Interest Rate represents the mean interest rate applied across all loan 
 - Month-over-Month (MoM) Change: +3.5%
 
 `MOM Avg Int Rate = ([MTD Avg Int Rate] - [PMTD Avg Int Rate])/[PMTD Avg Int Rate]`
+
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-13%20153732.png)
 
 **Insights**
 
@@ -677,6 +681,8 @@ Average Debt-to-Income (DTI) measures the average proportion of a borrower’s m
 - Month-over-Month (MoM) Change: +2.7%
 
 `MOM Avg DTI = ([MTD Avg DTI] - [PMTD Avg DTI])/[PMTD Avg DTI]`
+
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-13%20153623.png)
 
 **Insights**
 
