@@ -544,6 +544,8 @@ Total Funded Amount represents the total monetary value of loans that have been 
   - Month-to-Date (MTD): $54.0M
 
   - Month-over-Month (MoM) Growth: 13.0%
+ 
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-13%20153135.png)
 
 **Insights**
 
@@ -677,6 +679,8 @@ Average Debt-to-Income (DTI) measures the average proportion of a borrower’s m
 
 - Strengthen risk management and underwriting decisions.
 
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-13%20152913.png)
+
 **Good Loans Analysis**
 
 The Good Loans section highlights loans that are performing well based on repayment behavior and loan status. These loans represent low-risk customers and contribute positively to the overall loan performance.
@@ -732,6 +736,8 @@ The Bad Loans section focuses on loans that are underperforming or classified as
 - Bad Loan Funded Amount: $65.5M
 
 - Bad Loan Amount Received: $37.3M
+
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-13%20153223.png)
 
 **Insights**
 
@@ -792,6 +798,8 @@ The Loan Status Grid provides a detailed breakdown of loan performance based on 
 - Average Interest Rate
 
 - Average Debt-to-Income (DTI)
+
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-13%20153321.png)
 
 **Insights Derived**
 
