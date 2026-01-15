@@ -163,7 +163,7 @@ Data modeling was carried out in Power BI to ensure accurate analysis, efficient
  *Relationships*
   - A one-to-many relationship was established between the Date Table and the Bank Loan Fact Table using the loan issue date.
 
-![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-09%20143702.png)
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-09%20143702.png)
 
 Proper relationship direction was maintained to ensure accurate aggregation and filtering across visuals.
 
@@ -210,21 +210,21 @@ This section documents the SQL queries used in the analysis and the insights der
   
    `SELECT COUNT(id) AS Total_Applications FROM financial_loan`
 
-![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20145517.png)
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-08%20114536.png)
 
    - *Month to Date (MTD) Total Loan Applications*
   
    `SELECT COUNT(id) AS MTD_Total_Applications FROM financial_loan
     WHERE MONTH(issue_date) = 12 AND YEAR(issue_date) =2021`
 	
-![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/MTD%20Total%20A.png)
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/MTD%20Total%20A.png)
  
    - *Previous Month to Date (PMTD) Total Loan Applications*
 
    `SELECT COUNT(id) AS PMTD_Total_Applications FROM financial_loan
     WHERE MONTH(issue_date) = 11 AND YEAR(issue_date) =2021`
 
- ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20114911.png)
+ ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-08%20114911.png)
  
 - Understanding the total amount of funds disbursed as loans is crucial. What are the MTD Total Funded Amount, then analyse the Month-over-Month (MoM) changes in this metric.
 
@@ -232,21 +232,21 @@ This section documents the SQL queries used in the analysis and the insights der
 
    `SELECT SUM(loan_amount) AS Total_Funded_Amount FROM financial_loan`
 
- ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20114936.png)
+ ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-08%20114936.png)
 
    - *Month to Date (MTD) of Total Funded Amount*
     
    `SELECT SUM(loan_amount) AS MTD_Total_Funded_Amount FROM financial_loan
     WHERE MONTH(issue_date) = 12 AND YEAR(issue_date) =2021`
 
- ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20114956.png)
+ ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-08%20114956.png)
  
    - *Previous Month to Date (PMTD) of Total Funded Amount*
     
    `SELECT SUM(loan_amount) AS PMTD_Total_Funded_Amount FROM financial_loan
     WHERE MONTH(issue_date) = 11 AND YEAR(issue_date) =2021`
 
- ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20115023.png)
+ ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-08%20115023.png)
 
 
 - Tracking the total amount received from borrowers is essential for assessing the bank's cash flow and loan repayment. Analyse the Month-to-Date (MTD) Total Amount Received and observe the Month-over-Month (MoM) changes.
@@ -255,21 +255,21 @@ This section documents the SQL queries used in the analysis and the insights der
    
    `SELECT SUM(total_payment) AS Total_Amount_Received FROM financial_loan`
 
- ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20115100.png)
+ ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-08%20115100.png)
  
    - *Month to Date (MTD) of Total Amount Received*
    
    `SELECT SUM(total_payment) AS MTD_Total_Amount_Received FROM financial_loan
     WHERE MONTH(issue_date) = 12  AND YEAR(issue_date) =2021`
 
-![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20115125.png)
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-08%20115125.png)
  
    - *Previous Month to Date (PMTD) of Total Amount Received*
     
    `SELECT SUM(total_payment) AS PMTD_Total_Amount_Received FROM financial_loan
     WHERE MONTH(issue_date) = 11  AND YEAR(issue_date) =2021`
 
- ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20115145.png)
+ ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-08%20115145.png)
 
 - Calculate the average interest rate across all loans, MTD, and monitor the Month-over-Month (MoM) variations in interest rates.
 
@@ -277,21 +277,21 @@ This section documents the SQL queries used in the analysis and the insights der
     
    `SELECT AVG(int_rate)*100 AS Avg_Int_Rate FROM financial_loan`
 
- ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20115231.png)
+ ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-08%20115231.png)
  
    - *Month to Date (MTD) of Average Interest*
     
    `SELECT AVG(int_rate)*100 AS MTD_Avg_Int_Rate FROM financial_loan
     WHERE MONTH(issue_date) = 12 AND YEAR(issue_date) =2021`
 
- ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20115255.png)
+ ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-08%20115255.png)
  
    - *Previous Month to Date (PMTD) of Average Interest*
      
    `SELECT AVG(int_rate)*100 AS PMTD_Avg_Int_Rate FROM financial_loan
    WHERE MONTH(issue_date) = 11 AND YEAR(issue_date) =2021`
 
-![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20115314.png)
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-08%20115314.png)
 
 - Calculate the average DTI for our borrowers, MTD, and monitor the Month-Over-Month fluctuations
 
@@ -299,21 +299,21 @@ This section documents the SQL queries used in the analysis and the insights der
     
     `SELECT AVG(dti)*100 AS Avg_DTI FROM financial_loan`
 
-![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20115349.png)
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-08%20115349.png)
  
   - *Month to Date (MTD) of Average Debt-to-Income Ratio (DTI)*
     
     `SELECT ROUND(AVG(dti),5)*100 AS MTD_Avg_DTI FROM financial_loan
    WHERE MONTH(issue_date) = 12 AND YEAR(issue_date) =2021`
 
- ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20115410.png)
+ ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-08%20115410.png)
  
 - *Previous Month to Date (PMTD) of Average Debt-to-Income Ratio (DTI)*
     
  `SELECT AVG(dti)*100 AS PMTD_Avg_DTI FROM financial_loan
 WHERE MONTH(issue_date) = 11 AND YEAR(issue_date) =2021`
   
- ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20115433.png)
+ ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-08%20115433.png)
   
 - GOOD LOAN ISSUED
 
@@ -324,28 +324,28 @@ WHERE MONTH(issue_date) = 11 AND YEAR(issue_date) =2021`
 	      COUNT(id) AS Good_Loan_Percentage
     FROM financial_loan`
 
- ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20115509.png)
+ ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-08%20115509.png)
 
    - *Good Loan Applications*
      
   `SELECT COUNT(id) AS Good_Loan_Applications FROM financial_loan
      WHERE loan_status = 'Fully Paid' OR loan_status = 'Current'`
 
- ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20115530.png)
+ ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-08%20115530.png)
 
    - *Good Loan Funded Amount*
      
    `SELECT SUM(loan_amount) AS Good_Loan_Funded_amount FROM financial_loan
 WHERE loan_status = 'Fully Paid' OR loan_status = 'Current'`
 
-  ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20115607.png)
+  ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-08%20115607.png)
      
    - *Good Loan Amount Received*
      
      `SELECT SUM(total_payment) AS Good_Loan_amount_received FROM financial_loan
       WHERE loan_status = 'Fully Paid' OR loan_status = 'Current'`
 
- ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20115644.png)	
+ ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-08%20115644.png)	
  
  - BAD LOAN ISSUED
    
@@ -356,28 +356,28 @@ WHERE loan_status = 'Fully Paid' OR loan_status = 'Current'`
 	    COUNT(id) AS Bad_Loan_Percentage
    FROM financial_loan`
 
- ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20120002.png)
+ ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-08%20120002.png)
  
 - *Bad Loan Applications*
   
   `SELECT COUNT(id) AS Bad_Loan_Applications FROM financial_loan
    WHERE loan_status = 'Charged Off'`
 
-![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20120037.png)  
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-08%20120037.png)  
 
 - *Bad Loan Funded Amount*
     
      `SELECT SUM(loan_amount) AS Bad_Loan_Funded_amount FROM financial_loan  
      WHERE loan_status = 'Charged Off'`
 
- ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20120055.png) 
+ ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-08%20120055.png) 
  
 - *Bad Loan Amount Received*
     
      `SELECT SUM(total_payment) AS Bad_Loan_amount_received FROM financial_loan
      WHERE loan_status = 'Charged Off'`
 
-  ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20120120.png)
+  ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-08%20120120.png)
 
 - Total Loan Status
   
@@ -394,7 +394,7 @@ WHERE loan_status = 'Fully Paid' OR loan_status = 'Current'`
      GROUP BY
          loan_status`
 
-![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20120212.png)	 
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-08%20120212.png)	 
  
 - *Month to Date (MTD) of Total Amount Received for Loan Status*
   
@@ -406,7 +406,7 @@ WHERE loan_status = 'Fully Paid' OR loan_status = 'Current'`
      WHERE MONTH(issue_date) = 12 
      GROUP BY loan_status`
 
-  ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20120251.png)
+  ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-08%20120251.png)
  
 - BANK LOAN REPORT | OVERVIEW
    
@@ -422,7 +422,7 @@ WHERE loan_status = 'Fully Paid' OR loan_status = 'Current'`
    GROUP BY MONTH(issue_date), DATENAME(MONTH, issue_date)
    ORDER BY MONTH(issue_date)`
 
-![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-08%20120354.png)
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-08%20120354.png)
  
 - *Regional Analysis by State:To identify regions with significant lending activity and assess regional disparities*
 
@@ -435,7 +435,7 @@ WHERE loan_status = 'Fully Paid' OR loan_status = 'Current'`
    GROUP BY address_state
    ORDER BY address_state`
 
-![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-09%20141519.png)
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-09%20141519.png)
  
 - *Loan Term Analysis: To allow the client to understand the distribution of loans across various term lengths.*
   
@@ -448,7 +448,7 @@ WHERE loan_status = 'Fully Paid' OR loan_status = 'Current'`
     GROUP BY term
     ORDER BY term`
 
-![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-09%20141717.png)  
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-09%20141717.png)  
 
 - *Employee Length: How lending metrics are distributed among borrowers with different employment lengths, helping us assess the impact of employment history on loan applications*
     
@@ -461,7 +461,7 @@ WHERE loan_status = 'Fully Paid' OR loan_status = 'Current'`
    GROUP BY emp_length
    ORDER BY emp_length`
 
-![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-09%20141753.png)
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-09%20141753.png)
  
 - *Loan Purpose Breakdown: Will provide a visual breakdown of loan metrics based on the stated purposes of loans, aiding in the understanding of the primary reasons borrowers seek financing.*
    
@@ -474,7 +474,7 @@ WHERE loan_status = 'Fully Paid' OR loan_status = 'Current'`
   GROUP BY purpose
   ORDER BY purpose`
 
-![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-09%20141837.png)  
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-09%20141837.png)  
  
 - *Home Ownership Analysis: For a hierarchical view of how home ownership impacts loan applications and disbursements.*
 
@@ -487,7 +487,7 @@ WHERE loan_status = 'Fully Paid' OR loan_status = 'Current'`
    GROUP BY home_ownership
    ORDER BY home_ownership`
 
-![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-09%20141914.png)  
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-09%20141914.png)  
  
 ## Power BI Analysis & Results 
 
@@ -509,7 +509,7 @@ Total Loan Applications represents the cumulative number of loan requests submit
 
 `MOM Loan Application = ([MTD Loan Application] - [PMTD Loan Applications])/[PMTD Loan Applications]`
 
-![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-13%20153034.png)
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-13%20153034.png)
 
 **Insights**
 
@@ -833,7 +833,7 @@ The inclusion of MTD metrics allows users to monitor recent loan activity, ident
 
 The Summary Dashboard also presents a Good Loan vs Bad Loan comparison, offering insight into loan quality and risk exposure. Interactive slicers enable users to filter the data by time period, loan status, or other dimensions, making the dashboard flexible for quick executive-level analysis and decision-making.
 
-![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-09%20144225.png)
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-09%20144225.png)
 
 - **Overview Dashboard**
 
@@ -857,7 +857,7 @@ By visualizing these dimensions, the dashboard allows users to identify growth p
 
 The Overview Dashboard supports exploratory analysis and helps stakeholders uncover insights that explain why certain trends appear in the Summary Dashboard, making it a key tool for informed decision-making.
 
-![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-09%20144420.png)
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-09%20144420.png)
 
 - **Details Dashboard**
 
@@ -867,7 +867,7 @@ This dashboard typically presents a tabular or grid view containing key loan inf
 
 The Details Dashboard supports data validation, in-depth investigation, and ad-hoc analysis by allowing users to trace high-level trends back to the underlying data. It is especially useful for auditors, analysts, and business users who require transparency and detailed visibility into individual loan performance.
 
-![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Screenshot%202026-01-09%20144452.png)
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-09%20144452.png)
 
 ## What I Learned
 
