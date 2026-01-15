@@ -540,10 +540,17 @@ Total Funded Amount represents the total monetary value of loans that have been 
 - *Key Metrics*
 
   - Total Funded Amount: $435.8M
+ 
+`Total Funded Amount = SUM(financial_loan[loan_amount])`
 
   - Month-to-Date (MTD): $54.0M
+ 
+`PMTD Total Funded Amount = CALCULATE([Total Funded Amount], DATESMTD(DATEADD('Date Table'[Date],-1,MONTH)))`
 
   - Month-over-Month (MoM) Growth: 13.0%
+
+`MOM Funded Amount = ([MTD Total Funded Amount] - [PMTD Total Funded Amount])/[PMTD Total Funded Amount]`
+
  
 ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-13%20153135.png)
 
@@ -576,10 +583,16 @@ Total Amount Received represents the total repayments collected from borrowers, 
 - *Key Metrics*
 
   - Total Amount Received: $473.1M
+ 
+`Total Amount Received = SUM(financial_loan[total_payment])`
 
   - Month-to-Date (MTD): $58.1M
 
+`MTD Total Amount Received = CALCULATE(TOTALMTD([Total Amount Received],'Date Table'[Date]))`
+
   - Month-over-Month (MoM) Growth: 15.8%
+
+`MOM Total Amount Received = ([MTD Total Amount Received] - [PMTD Total Amount Received])/[PMTD Total Amount Received]`
 
 **Insights**
 
@@ -611,9 +624,15 @@ Average Interest Rate represents the mean interest rate applied across all loan 
 
 - Average Interest Rate: 12.0%
 
+`Avg Interest Rate = AVERAGE(financial_loan[int_rate])`
+
 - Month-to-Date (MTD): 12.4%
 
+`MTD Avg Int Rate = CALCULATE(TOTALMTD([Avg Interest Rate],'Date Table'[Date]))`
+
 - Month-over-Month (MoM) Change: +3.5%
+
+`MOM Avg Int Rate = ([MTD Avg Int Rate] - [PMTD Avg Int Rate])/[PMTD Avg Int Rate]`
 
 **Insights**
 
@@ -649,9 +668,15 @@ Average Debt-to-Income (DTI) measures the average proportion of a borrower’s m
 
 - Average DTI: 13.3%
 
+`Avg DTI = AVERAGE(financial_loan[dti])`
+
 - Month-to-Date (MTD): 13.7%
 
+`MTD Avg DTI = CALCULATE(TOTALMTD([Avg DTI],'Date Table'[Date]))`
+
 - Month-over-Month (MoM) Change: +2.7%
+
+`MOM Avg DTI = ([MTD Avg DTI] - [PMTD Avg DTI])/[PMTD Avg DTI]`
 
 **Insights**
 
@@ -689,13 +714,24 @@ The Good Loans section highlights loans that are performing well based on repaym
 
 - Good Loan Percentage: 86.2%
 
+`Good Loan % = (CALCULATE([Total Loan Application], financial_loan[Good vs Bad Loan] = "Good Loan"))/[Total Loan Application]`
+
 - Good Loan Applications: 33.2K
+
+`Good Loan Applications = CALCULATE([Total Loan Application],financial_loan[Good vs Bad Loan] = "Good Loan")`
 
 - Good Loan Funded Amount: $370.2M
 
+`Good Loan Funded Amount = CALCULATE([Total Funded Amount],financial_loan[Good vs Bad Loan] = "Good Loan")`
+
 - Good Loan Amount Received: $435.8M
 
+`Good Loan Received Amount = CALCULATE([Total Amount Received],financial_loan[Good vs Bad Loan] = "Good Loan")`
+
 **Insights**
+
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-13%20152913.png)
+
 
 - With 86.2% of total loans classified as good, the analysis shows strong overall loan quality and effective credit risk management.
 
@@ -731,11 +767,20 @@ The Bad Loans section focuses on loans that are underperforming or classified as
 
 - Bad Loan Percentage: 13.82%
 
+`Bad Loan % = (CALCULATE([Total Loan Application], financial_loan[Good vs Bad Loan] = "Bad Loan"))/[Total Loan Application]`
+
 - Bad Loan Applications: 5.3K
+
+`Bad Loan Applications = CALCULATE([Total Loan Application],financial_loan[Good vs Bad Loan] = "Bad Loan")`
 
 - Bad Loan Funded Amount: $65.5M
 
+`Bad Loan Funded Amount = CALCULATE([Total Funded Amount],financial_loan[Good vs Bad Loan] = "Bad Loan")`
+
 - Bad Loan Amount Received: $37.3M
+
+`Bad Loan Received Amount = CALCULATE([Total Amount Received],financial_loan[Good vs Bad Loan] = "Bad Loan")`
+
 
 ![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-13%20153223.png)
 
