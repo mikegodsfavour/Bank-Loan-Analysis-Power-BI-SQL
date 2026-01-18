@@ -710,8 +710,6 @@ Average Debt-to-Income (DTI) measures the average proportion of a borrower’s m
 
 - Strengthen risk management and underwriting decisions.
 
-![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-13%20152913.png)
-
 **Good Loans Analysis**
 
 The Good Loans section highlights loans that are performing well based on repayment behavior and loan status. These loans represent low-risk customers and contribute positively to the overall loan performance.
@@ -875,6 +873,41 @@ The Loan Status Grid provides a detailed breakdown of loan performance based on 
 - Transparent reporting for management and stakeholders
 
 This grid serves as a core analytical component that bridges high-level KPIs and detailed loan performance insights within the dashboard.
+
+**Total Funded Amount by Month**
+
+This chart displays the total loan amount funded each month over the selected period. It helps track how loan disbursements vary across time and highlights monthly lending trends.
+
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-13%20154537.png)
+
+**Insight**
+The visualization shows that the total funded amount fluctuates month-to-month, indicating that loan funding activity is influenced by seasonal demand, customer behavior, and lending policies. Months with higher funded amounts reflect periods of increased loan approvals and stronger lending performance, while months with lower values suggest reduced loan disbursement activity.
+
+*This trend analysis enables stakeholders to:*
+
+- Monitor monthly lending performance.
+
+- Identify peak and low funding periods.
+
+- Support forecasting and strategic planning.
+
+**Total Funded Amount by State**
+
+This chart shows the distribution of total funded loan amounts across different states, enabling a geographic comparison of loan disbursement performance.
+
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-13%20154556.png)
+
+**Insight**
+
+The visualization indicates that loan funding is unevenly distributed across states, with a small number of states accounting for a larger share of the total funded amount. These high-performing states likely have stronger customer demand, higher loan approval rates, or more active lending operations. States with lower funded amounts may represent emerging markets or areas with lower loan penetration.
+
+*This insight helps the organization:*
+
+Identify top-performing and underperforming states.
+
+Evaluate regional lending patterns.
+
+Support location-based strategy and resource allocation.
 
 ## Data Visualization
 
