@@ -903,11 +903,61 @@ The visualization indicates that loan funding is unevenly distributed across sta
 
 *This insight helps the organization:*
 
-Identify top-performing and underperforming states.
+- Identify top-performing and underperforming states.
 
-Evaluate regional lending patterns.
+- Evaluate regional lending patterns.
 
-Support location-based strategy and resource allocation.
+- Support location-based strategy and resource allocation.
+
+**Total Funded Amount by Loan Term** 
+
+This visualization presents the total funded loan amount grouped by loan term, allowing comparison between different loan durations (such as short-term and long-term loans).
+
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-13%20154622.png)
+
+**Insight**
+
+The chart shows that longer-term loans account for a larger share of the total funded amount compared to shorter-term loans. This suggests that borrowers tend to prefer extended repayment periods, which may be driven by affordability considerations and lower monthly repayment obligations. Shorter-term loans, while fewer in value, may represent customers seeking faster repayment and lower interest exposure.
+
+*This analysis supports:*
+
+- Understanding borrower repayment preferences
+
+- Evaluating the risk and return profile of different loan terms
+
+- Improving loan product structuring and portfolio balance.
+
+**Total Funded Amount by Employee Length**
+
+This chart illustrates the total funded loan amount segmented by borrowers’ employment length, showing how loan funding varies based on job stability and work experience.
+
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-13%20154657.png)
+
+**Insight**
+
+The visualization indicates that borrowers with longer employment history contribute a higher share of the total funded amount. This suggests that customers with stable and extended employment are more likely to qualify for larger loan amounts, as they are generally perceived as lower risk by lenders. Borrowers with shorter employment length account for relatively lower funded amounts, reflecting more cautious lending decisions for less stable income profiles.
+
+*This insight helps:*
+
+- Assess the relationship between employment stability and loan funding
+
+- Support risk assessment and credit policy decisions
+
+- Improve understanding of borrower characteristics within the loan portfolio.
+
+**Total Funded Amount by Purpose**
+
+This chart displays the total funded loan amount categorized by loan purpose, such as debt consolidation, credit card repayment, home improvement, and other purposes.
+
+![](https://github.com/mikegodsfavour/Bank-Loan-Analysis-Power-BI-SQL/blob/main/Image/Screenshot%202026-01-13%20154717.png)	
+
+**Insight:**
+
+The visualization reveals that a significant portion of the funded amount is concentrated in specific purposes, particularly debt consolidation and credit card-related loans. This indicates that many borrowers are using loans to manage existing debts rather than for new expenditures. Other purposes contribute smaller but meaningful portions to the overall funded amount.
+
+*Why this is important:*
+
+Understanding funded amounts by loan purpose helps explain borrower motivation and demand patterns. It supports better assessment of lending focus areas and provides clarity on which loan purposes drive the majority of funding activity.
 
 ## Data Visualization
 
